@@ -74,11 +74,12 @@ module Jobs
       end
 
       def fetch_raw_feed
-        final_destination = FinalDestination.new(@feed_url)
-        feed_final_url = final_destination.resolve
-        return nil unless final_destination.status == :resolved
+        #final_destination = FinalDestination.new(@feed_url)
+        #feed_final_url = final_destination.resolve
+        #return nil unless final_destination.status == :resolved
 
-        Excon.new(feed_final_url.to_s).request(method: :get, expects: 200).body
+        #Excon.new(feed_final_url.to_s).request(method: :get, expects: 200).body
+        Excon.new(@feed_url).request(method: :get, expects: 200).body
       rescue Excon::Error::HTTPStatus
         nil
       end
