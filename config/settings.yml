@@ -12,6 +12,6 @@ plugins:
 
   rss_polling_frequency:
     min: 10
-    max: 180
+    max: 1440
     default: 30
     client: false
